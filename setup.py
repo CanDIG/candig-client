@@ -39,15 +39,16 @@ except EnvironmentError:
           'creating dependency links.')
 
 setup(
-    name="ga4gh_client",
-    description="A client for the GA4GH reference server",
+    name="candig_client",
+    description="A client for the CanDIG server",
     packages=["ga4gh", "ga4gh.client"],
     namespace_packages=["ga4gh"],
-    url="https://github.com/ga4gh/ga4gh-client",
+    url="https://github.com/CanDIG/candig-client",
     use_scm_version={"write_to": "ga4gh/client/_version.py"},
     entry_points={
         'console_scripts': [
             'ga4gh_client=ga4gh.client.cli:client_main',
+            'candig_client=ga4gh.client.cli:client_main'
         ]
     },
     long_description=long_description,
@@ -56,8 +57,8 @@ setup(
     license='Apache License 2.0',
     include_package_data=True,
     zip_safe=True,
-    author="Global Alliance for Genomics and Health",
-    author_email="theglobalalliance@genomicsandhealth.org",
+    author="CanDIG Team",
+    author_email="info@distributedgenomics.ca",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
@@ -66,7 +67,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
     ],
-    keywords=['genomics', 'reference'],
+    keywords=['genomics', 'CanDIG'],
     # Use setuptools_scm to set the version number automatically from Git
     setup_requires=['setuptools_scm'],
 )
