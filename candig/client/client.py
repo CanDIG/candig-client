@@ -419,7 +419,7 @@ class AbstractClient(object):
             expression_level_id)
 
     def search_variants(
-            self, variant_set_id, start=None, end=None, reference_name=None,
+            self, variant_set_ids, start=None, end=None, reference_name=None,
             call_set_ids=None):
         """
         Returns an iterator over the Variants fulfilling the specified
@@ -449,7 +449,7 @@ class AbstractClient(object):
         request.reference_name = pb.string(reference_name)
         request.start = pb.int(start)
         request.end = pb.int(end)
-        request.variant_set_id = variant_set_id
+        request.variant_set_ids = variant_set_ids
         request.call_set_ids.extend(pb.string(call_set_ids))
         request.page_size = pb.int(self._page_size)
         return self._run_search_request(

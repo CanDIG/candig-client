@@ -81,7 +81,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
         request.call_set_ids.extend(self.callSetIds)
         request.page_size = self.pageSize
         self.httpClient.search_variants(
-            self.variantSetId, start=self.start, end=self.end,
+            variant_set_ids, start=self.start, end=self.end,
             reference_name=self.referenceName, call_set_ids=self.callSetIds)
         self.httpClient._run_search_request.assert_called_once_with(
             request, "variants", protocol.SearchVariantsResponse)
@@ -103,9 +103,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
 
     def testSearchVariantAnnotationSets(self):
         request = protocol.SearchVariantAnnotationSetsRequest()
-        variant_set_ids = []
-        variant_set_ids.append(self.variantSetId)
-        request.variant_set_ids.extend(variant_set_ids)
+        request.variant_set_id = self.variantSetId
         request.page_size = self.pageSize
         self.httpClient.search_variant_annotation_sets(self.variantSetId)
         self.httpClient._run_search_request.assert_called_once_with(
@@ -226,9 +224,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
 
     def testSearchCallSets(self):
         request = protocol.SearchCallSetsRequest()
-        variant_set_ids = []
-        variant_set_ids.append(self.variantSetId)
-        request.variant_set_ids.extend(variant_set_ids)
+        request.variant_set_id = self.variantSetId
         request.name = self.objectName
         request.biosample_id = self.biosampleId
         request.page_size = self.pageSize
