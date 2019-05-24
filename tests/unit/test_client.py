@@ -438,7 +438,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
             "info", protocol.GetInfoResponse)
 
     def testAnnounce(self):
-        url = "http://1kgenomes.candig.org"
+        url = "http://1kgenomes.ga4gh.org"
         self.httpClient.announce(url)
         request = protocol.AnnouncePeerRequest()
         request.peer.url = url
