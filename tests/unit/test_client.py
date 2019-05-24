@@ -9,10 +9,10 @@ import unittest
 
 import mock
 
-import ga4gh.client.client as client
-import ga4gh.client.exceptions as exceptions
+import candig.client.client as client
+import candig.client.exceptions as exceptions
 
-import ga4gh.schemas.protocol as protocol
+import candig.schemas.protocol as protocol
 
 
 class TestSearchMethodsCallRunRequest(unittest.TestCase):
@@ -438,7 +438,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
             "info", protocol.GetInfoResponse)
 
     def testAnnounce(self):
-        url = "http://1kgenomes.ga4gh.org"
+        url = "http://1kgenomes.candig.org"
         self.httpClient.announce(url)
         request = protocol.AnnouncePeerRequest()
         request.peer.url = url

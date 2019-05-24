@@ -9,9 +9,9 @@ import json
 import mock
 import unittest
 
-import ga4gh.client.cli as cli_client
+import candig.client.cli as cli_client
 
-import ga4gh.common.utils as utils
+import candig.common.utils as utils
 
 import tests.unit.fakeobj_pb2 as fakeobj
 

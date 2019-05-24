@@ -13,10 +13,10 @@ import json
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import LegacyApplicationClient
 
-import ga4gh.client.exceptions as exceptions
+import candig.client.exceptions as exceptions
 
-import ga4gh.schemas.pb as pb
-import ga4gh.schemas.protocol as protocol
+import candig.schemas.pb as pb
+import candig.schemas.protocol as protocol
 
 
 class AbstractClient(object):
@@ -166,7 +166,7 @@ class AbstractClient(object):
 
         :param str biosample_id: The ID of the Biosample
         :return: The requested Biosample.
-        :rtype: :class:`ga4gh.protocol.Biosample`
+        :rtype: :class:`candig.protocol.Biosample`
         """
         return self._run_get_request(
             "biosamples", protocol.Biosample, biosample_id)
@@ -177,7 +177,7 @@ class AbstractClient(object):
 
         :param str individual_id: The ID of the Individual
         :return: The requested Individual.
-        :rtype: :class:`ga4gh.protocol.Individual`
+        :rtype: :class:`candig.protocol.Individual`
         """
         return self._run_get_request(
             "individuals", protocol.Individual, individual_id)
@@ -188,7 +188,7 @@ class AbstractClient(object):
 
         :param str experiment_id: The ID of the Experiment
         :return: The requested Experiment.
-        :rtype: :class:`ga4gh.protocol.Experiment`
+        :rtype: :class:`candig.protocol.Experiment`
         """
         return self._run_get_request(
             "experiments", protocol.Experiment, experiment_id)
@@ -199,7 +199,7 @@ class AbstractClient(object):
 
         :param str experiment_id: The ID of the Analysis
         :return: The requested Analysis.
-        :rtype: :class:`ga4gh.protocol.Analysis`
+        :rtype: :class:`candig.protocol.Analysis`
         """
         return self._run_get_request(
             "analyses", protocol.Analysis, analysis_id)
@@ -251,7 +251,7 @@ class AbstractClient(object):
 
         :param str dataset_id: The ID of the Dataset of interest.
         :return: The Dataset of interest.
-        :rtype: :class:`ga4gh.protocol.Dataset`
+        :rtype: :class:`candig.protocol.Dataset`
         """
         return self._run_get_request(
             "datasets", protocol.Dataset, dataset_id)
@@ -262,7 +262,7 @@ class AbstractClient(object):
 
         :param str reference_set_id: The ID of the ReferenceSet of interest.
         :return: The ReferenceSet of interest.
-        :rtype: :class:`ga4gh.protocol.ReferenceSet`
+        :rtype: :class:`candig.protocol.ReferenceSet`
         """
         return self._run_get_request(
             "referencesets", protocol.ReferenceSet, reference_set_id)
@@ -273,7 +273,7 @@ class AbstractClient(object):
 
         :param str reference_id: The ID of the Reference of interest.
         :return: The Reference of interest.
-        :rtype: :class:`ga4gh.protocol.Reference`
+        :rtype: :class:`candig.protocol.Reference`
         """
         return self._run_get_request(
             "references", protocol.Reference, reference_id)
@@ -284,7 +284,7 @@ class AbstractClient(object):
 
         :param str read_group_set_id: The ID of the ReadGroupSet of interest.
         :return: The ReadGroupSet of interest.
-        :rtype: :class:`ga4gh.protocol.ReadGroupSet`
+        :rtype: :class:`candig.protocol.ReadGroupSet`
         """
         return self._run_get_request(
             "readgroupsets", protocol.ReadGroupSet, read_group_set_id)
@@ -295,7 +295,7 @@ class AbstractClient(object):
 
         :param str read_group_id: The ID of the ReadGroup of interest.
         :return: The ReadGroup of interest.
-        :rtype: :class:`ga4gh.protocol.ReadGroup`
+        :rtype: :class:`candig.protocol.ReadGroup`
         """
         return self._run_get_request(
             "readgroups", protocol.ReadGroup, read_group_id)
@@ -306,7 +306,7 @@ class AbstractClient(object):
 
         :param str call_set_id: The ID of the CallSet of interest.
         :return: The CallSet of interest.
-        :rtype: :class:`ga4gh.protocol.CallSet`
+        :rtype: :class:`candig.protocol.CallSet`
         """
         return self._run_get_request(
             "callsets", protocol.CallSet, call_set_id)
@@ -317,7 +317,7 @@ class AbstractClient(object):
 
         :param str variant_id: The ID of the Variant of interest.
         :return: The Variant of interest.
-        :rtype: :class:`ga4gh.protocol.Variant`
+        :rtype: :class:`candig.protocol.Variant`
         """
         return self._run_get_request(
             "variants", protocol.Variant, variant_id)
@@ -328,7 +328,7 @@ class AbstractClient(object):
 
         :param str variant_set_id: The ID of the VariantSet of interest.
         :return: The VariantSet of interest.
-        :rtype: :class:`ga4gh.protocol.VariantSet`
+        :rtype: :class:`candig.protocol.VariantSet`
         """
         return self._run_get_request(
             "variantsets", protocol.VariantSet, variant_set_id)
@@ -341,7 +341,7 @@ class AbstractClient(object):
         :param str variant_annotation_set_id: The ID of the
             VariantAnnotationSet of interest.
         :return: The VariantAnnotationSet of interest.
-        :rtype: :class:`ga4gh.protocol.VariantAnnotationSet`
+        :rtype: :class:`candig.protocol.VariantAnnotationSet`
         """
         return self._run_get_request(
             "variantannotationsets", protocol.VariantAnnotationSet,
@@ -353,7 +353,7 @@ class AbstractClient(object):
 
         :param str feature_set_id: The ID of the FeatureSet of interest.
         :return: The FeatureSet of interest.
-        :rtype: :class:`ga4gh.protocol.FeatureSet`
+        :rtype: :class:`candig.protocol.FeatureSet`
         """
         return self._run_get_request(
             "featuresets", protocol.FeatureSet, feature_set_id)
@@ -363,7 +363,7 @@ class AbstractClient(object):
         Returns the feature with the specified ID from the server.
 
         :param str feature_id: The ID of the requested feature
-        :return: The requested ga4gh.protocol.Feature object.
+        :return: The requested candig.protocol.Feature object.
         """
         return self._run_get_request(
             "features", protocol.Feature, feature_id)
@@ -374,7 +374,7 @@ class AbstractClient(object):
 
         :param str continuous_set_id: The ID of the ContinuousSet of interest.
         :return: The ContinuousSet of interest.
-        :rtype: :class:`ga4gh.protocol.ContinuousSet`
+        :rtype: :class:`candig.protocol.ContinuousSet`
         """
         return self._run_get_request(
             "continuoussets", protocol.ContinuousSet, continuous_set_id)
@@ -386,7 +386,7 @@ class AbstractClient(object):
         :param str rna_quantification_set_id: The ID of the
             RnaQuantificationSet of interest.
         :return: The RnaQuantificationSet of interest.
-        :rtype: :class:`ga4gh.protocol.RnaQuantificationSet`
+        :rtype: :class:`candig.protocol.RnaQuantificationSet`
         """
         return self._run_get_request(
             "rnaquantificationsets", protocol.RnaQuantificationSet,
@@ -399,7 +399,7 @@ class AbstractClient(object):
         :param str rna_quantification_id: The ID of the RnaQuantification of
             interest.
         :return: The RnaQuantification of interest.
-        :rtype: :class:`ga4gh.protocol.RnaQuantification`
+        :rtype: :class:`candig.protocol.RnaQuantification`
         """
         return self._run_get_request(
             "rnaquantifications", protocol.RnaQuantification,
@@ -412,7 +412,7 @@ class AbstractClient(object):
         :param str expression_level_id: The ID of the ExpressionLevel of
             interest.
         :return: The ExpressionLevel of interest.
-        :rtype: :class:`ga4gh.protocol.ExpressionLevel`
+        :rtype: :class:`candig.protocol.ExpressionLevel`
         """
         return self._run_get_request(
             "expressionlevels", protocol.ExpressionLevel,
@@ -426,7 +426,7 @@ class AbstractClient(object):
         conditions from the specified VariantSet.
 
         :param str variant_set_id: The ID of the
-            :class:`ga4gh.protocol.VariantSet` of interest.
+            :class:`candig.protocol.VariantSet` of interest.
         :param int start: Required. The beginning of the window (0-based,
             inclusive) for which overlapping variants should be returned.
             Genomic positions are non-negative integers less than reference
@@ -436,12 +436,12 @@ class AbstractClient(object):
         :param int end: Required. The end of the window (0-based, exclusive)
             for which overlapping variants should be returned.
         :param str reference_name: The name of the
-            :class:`ga4gh.protocol.Reference` we wish to return variants from.
+            :class:`candig.protocol.Reference` we wish to return variants from.
         :param list call_set_ids: Only return variant calls which belong to
             call sets with these IDs. If an empty array, returns variants
             without any call objects. If null, returns all variant calls.
 
-        :return: An iterator over the :class:`ga4gh.protocol.Variant` objects
+        :return: An iterator over the :class:`candig.protocol.Variant` objects
             defined by the query parameters.
         :rtype: iter
         """
@@ -463,7 +463,7 @@ class AbstractClient(object):
         conditions from the specified VariantSet.
 
         :param str variant_set_id: The ID of the
-            :class:`ga4gh.protocol.VariantSet` of interest.
+            :class:`candig.protocol.VariantSet` of interest.
         :param int start: Required. The beginning of the window (0-based,
             inclusive) for which overlapping variants should be returned.
             Genomic positions are non-negative integers less than reference
@@ -473,12 +473,12 @@ class AbstractClient(object):
         :param int end: Required. The end of the window (0-based, exclusive)
             for which overlapping variants should be returned.
         :param str reference_name: The name of the
-            :class:`ga4gh.protocol.Reference` we wish to return variants from.
+            :class:`candig.protocol.Reference` we wish to return variants from.
         :param list call_set_ids: Only return variant calls which belong to
             call sets with these IDs. If an empty array, returns variants
             without any call objects. If null, returns all variant calls.
 
-        :return: An iterator over the :class:`ga4gh.protocol.Variant` objects
+        :return: An iterator over the :class:`candig.protocol.Variant` objects
             defined by the query parameters.
         :rtype: tuple
         """
@@ -510,7 +510,7 @@ class AbstractClient(object):
         the specified conditions from the specified VariantSet.
 
         :param str variant_annotation_set_id: The ID of the
-            :class:`ga4gh.protocol.VariantAnnotationSet` of interest.
+            :class:`candig.protocol.VariantAnnotationSet` of interest.
         :param int start: Required. The beginning of the window (0-based,
             inclusive) for which overlapping variants should be returned.
             Genomic positions are non-negative integers less than reference
@@ -520,10 +520,10 @@ class AbstractClient(object):
         :param int end: Required. The end of the window (0-based, exclusive)
             for which overlapping variants should be returned.
         :param str reference_name: The name of the
-            :class:`ga4gh.protocol.Reference` we wish to return variants from.
+            :class:`candig.protocol.Reference` we wish to return variants from.
 
         :return: An iterator over the
-            :class:`ga4gh.protocol.VariantAnnotation` objects
+            :class:`candig.protocol.VariantAnnotation` objects
             defined by the query parameters.
         :rtype: iter
         """
@@ -605,7 +605,7 @@ class AbstractClient(object):
         """
         Returns an iterator over the Datasets on the server.
 
-        :return: An iterator over the :class:`ga4gh.protocol.Dataset`
+        :return: An iterator over the :class:`candig.protocol.Dataset`
             objects on the server.
         """
         request = protocol.SearchDatasetsRequest()
@@ -618,9 +618,9 @@ class AbstractClient(object):
         Returns an iterator over the VariantSets fulfilling the specified
         conditions from the specified Dataset.
 
-        :param str dataset_id: The ID of the :class:`ga4gh.protocol.Dataset`
+        :param str dataset_id: The ID of the :class:`candig.protocol.Dataset`
             of interest.
-        :return: An iterator over the :class:`ga4gh.protocol.VariantSet`
+        :return: An iterator over the :class:`candig.protocol.VariantSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchVariantSetsRequest()
@@ -635,8 +635,8 @@ class AbstractClient(object):
         conditions from the specified variant set.
 
         :param str variant_set_id: The ID of the
-            :class:`ga4gh.protocol.VariantSet` of interest.
-        :return: An iterator over the :class:`ga4gh.protocol.AnnotationSet`
+            :class:`candig.protocol.VariantSet` of interest.
+        :return: An iterator over the :class:`candig.protocol.AnnotationSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchVariantAnnotationSetsRequest()
@@ -652,8 +652,8 @@ class AbstractClient(object):
         conditions from the specified Dataset.
 
         :param str dataset_id: The ID of the
-            :class:`ga4gh.protocol.Dataset` of interest.
-        :return: An iterator over the :class:`ga4gh.protocol.FeatureSet`
+            :class:`candig.protocol.Dataset` of interest.
+        :return: An iterator over the :class:`candig.protocol.FeatureSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchFeatureSetsRequest()
@@ -668,8 +668,8 @@ class AbstractClient(object):
         conditions from the specified Dataset.
 
         :param str dataset_id: The ID of the
-            :class:`ga4gh.protocol.Dataset` of interest.
-        :return: An iterator over the :class:`ga4gh.protocol.ContinuousSet`
+            :class:`candig.protocol.Dataset` of interest.
+        :return: An iterator over the :class:`candig.protocol.ContinuousSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchContinuousSetsRequest()
@@ -688,12 +688,12 @@ class AbstractClient(object):
             the `accession` matches this string (case-sensitive, exact match).
         :param str md5checksum: If not null, return the reference sets for
             which the `md5checksum` matches this string (case-sensitive, exact
-            match). See :class:`ga4gh.protocol.ReferenceSet::md5checksum` for
+            match). See :class:`candig.protocol.ReferenceSet::md5checksum` for
             details.
         :param str assembly_id: If not null, return the reference sets for
             which the `assembly_id` matches this string (case-sensitive,
             exact match).
-        :return: An iterator over the :class:`ga4gh.protocol.ReferenceSet`
+        :return: An iterator over the :class:`candig.protocol.ReferenceSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchReferenceSetsRequest()
@@ -716,7 +716,7 @@ class AbstractClient(object):
         :param str md5checksum: If not None, return the references for which
             the `md5checksum` matches this string (case-sensitive, exact
             match).
-        :return: An iterator over the :class:`ga4gh.protocol.Reference`
+        :return: An iterator over the :class:`candig.protocol.Reference`
             objects defined by the query parameters.
         """
         request = protocol.SearchReferencesRequest()
@@ -738,7 +738,7 @@ class AbstractClient(object):
             be returned.
         :param str biosample_id: Only CallSets matching this id will
             be returned.
-        :return: An iterator over the :class:`ga4gh.protocol.CallSet`
+        :return: An iterator over the :class:`candig.protocol.CallSet`
             objects defined by the query parameters.
         """
         request = protocol.SearchCallSetsRequest()
@@ -759,7 +759,7 @@ class AbstractClient(object):
             be returned.
         :param str individual_id: Only Biosamples matching matching this
             id will be returned.
-        :return: An iterator over the :class:`ga4gh.protocol.Biosample`
+        :return: An iterator over the :class:`candig.protocol.Biosample`
             objects defined by the query parameters.
         """
         request = protocol.SearchBiosamplesRequest()
@@ -778,7 +778,7 @@ class AbstractClient(object):
         :param str dataset_id: The dataset to search within.
         :param str name: Only Individuals matching the specified name will
             be returned.
-        :return: An iterator over the :class:`ga4gh.protocol.Biosample`
+        :return: An iterator over the :class:`candig.protocol.Biosample`
             objects defined by the query parameters.
         """
         request = protocol.SearchIndividualsRequest()
@@ -796,7 +796,7 @@ class AbstractClient(object):
         :param str dataset_id: The dataset to search within.
         :param str name: Only Experiments matching the specified name will
             be returned.
-        :return: An iterator over the :class:`ga4gh.protocol.Experiment`
+        :return: An iterator over the :class:`candig.protocol.Experiment`
             objects defined by the query parameters.
         """
         request = protocol.SearchExperimentsRequest()
@@ -813,7 +813,7 @@ class AbstractClient(object):
         :param str dataset_id: The dataset to search within.
         :param str name: Only Analyses matching the specified name will
             be returned.
-        :return: An iterator over the :class:`ga4gh.protocol.Analysis`
+        :return: An iterator over the :class:`candig.protocol.Analysis`
             objects defined by the query parameters.
         """
         request = protocol.SearchAnalysesRequest()
@@ -832,7 +832,7 @@ class AbstractClient(object):
             will be returned.
         :param str biosample_id: Only ReadGroups matching the specified
             biosample will be included in the response.
-        :return: An iterator over the :class:`ga4gh.protocol.ReadGroupSet`
+        :return: An iterator over the :class:`candig.protocol.ReadGroupSet`
             objects defined by the query parameters.
         :rtype: iter
         """
@@ -851,9 +851,9 @@ class AbstractClient(object):
         conditions from the specified read_group_ids.
 
         :param str read_group_ids: The IDs of the
-            :class:`ga4gh.protocol.ReadGroup` of interest.
+            :class:`candig.protocol.ReadGroup` of interest.
         :param str reference_id: The name of the
-            :class:`ga4gh.protocol.Reference` we wish to return reads
+            :class:`candig.protocol.Reference` we wish to return reads
             mapped to.
         :param int start: The start position (0-based) of this query. If a
             reference is specified, this defaults to 0. Genomic positions are
@@ -864,7 +864,7 @@ class AbstractClient(object):
             If a reference is specified, this defaults to the reference's
             length.
         :return: An iterator over the
-            :class:`ga4gh.protocol.ReadAlignment` objects defined by
+            :class:`candig.protocol.ReadAlignment` objects defined by
             the query parameters.
         :rtype: iter
         """
@@ -947,7 +947,7 @@ class AbstractClient(object):
         Returns an iterator over the RnaQuantification objects from the server
 
         :param str rna_quantification_set_id: The ID of the
-            :class:`ga4gh.protocol.RnaQuantificationSet` of interest.
+            :class:`candig.protocol.RnaQuantificationSet` of interest.
         """
         request = protocol.SearchRnaQuantificationsRequest()
         request.rna_quantification_set_id = rna_quantification_set_id
@@ -962,9 +962,9 @@ class AbstractClient(object):
         Returns an iterator over the ExpressionLevel objects from the server
 
         :param str feature_ids: The IDs of the
-            :class:`ga4gh.protocol.Feature` of interest.
+            :class:`candig.protocol.Feature` of interest.
         :param str rna_quantification_id: The ID of the
-            :class:`ga4gh.protocol.RnaQuantification` of interest.
+            :class:`candig.protocol.RnaQuantification` of interest.
         :param float threshold: Minimum expression of responses to return.
         """
         request = protocol.SearchExpressionLevelsRequest()
