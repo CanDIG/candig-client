@@ -75,7 +75,9 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
         request.reference_name = self.referenceName
         request.start = self.start
         request.end = self.end
-        request.variant_set_id = self.variantSetId
+        variant_set_ids = []
+        variant_set_ids.append(self.variantSetId)
+        request.variant_set_ids = variant_set_ids
         request.call_set_ids.extend(self.callSetIds)
         request.page_size = self.pageSize
         self.httpClient.search_variants(
