@@ -13,7 +13,7 @@ import candig.client
 import candig.client.client as client
 import candig.client.exceptions as exceptions
 
-import candig.common.cli as cli
+import ga4gh.common.cli as cli
 import candig.schemas.protocol as protocol
 
 

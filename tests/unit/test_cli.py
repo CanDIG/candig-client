@@ -11,7 +11,7 @@ import unittest
 
 import candig.client.cli as cli_client
 
-import candig.common.utils as utils
+import ga4gh.common.utils as utils
 
 import tests.unit.fakeobj_pb2 as fakeobj
 
