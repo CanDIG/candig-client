@@ -29,6 +29,6 @@ Client API
 
 .. todo:: Add overview documentation for the client API.
 
-.. automodule:: ga4gh.client.client
+.. automodule:: candig.client.client
     :members:
 

@@ -21,7 +21,5 @@
 # When making a release, these constraints are changed to point at
 # the released dependency.
 #
-# ga4gh-schemas==0.1.0
-#
 #git+git://github.com/ga4gh/ga4gh-common.git@master#egg=ga4gh_common
-git+git://github.com/CanDIG/ga4gh-schemas.git@master#egg=ga4gh_schemas
+#git+git://github.com/CanDIG/candig-schemas.git@develop#egg=candig_schemas

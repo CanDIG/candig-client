@@ -9,7 +9,7 @@ import json
 import mock
 import unittest
 
-import ga4gh.client.cli as cli_client
+import candig.client.cli as cli_client
 
 import ga4gh.common.utils as utils
 

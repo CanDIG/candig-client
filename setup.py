@@ -41,14 +41,14 @@ except EnvironmentError:
 setup(
     name="candig_client",
     description="A client for the CanDIG server",
-    packages=["ga4gh", "ga4gh.client"],
-    namespace_packages=["ga4gh"],
+    packages=["candig", "candig.client"],
+    namespace_packages=["candig"],
     url="https://github.com/CanDIG/candig-client",
-    use_scm_version={"write_to": "ga4gh/client/_version.py"},
+    use_scm_version={"write_to": "candig/client/_version.py"},
     entry_points={
         'console_scripts': [
-            'ga4gh_client=ga4gh.client.cli:client_main',
-            'candig_client=ga4gh.client.cli:client_main'
+            'ga4gh_client=candig.client.cli:client_main',
+            'candig_client=candig.client.cli:client_main'
         ]
     },
     long_description=long_description,

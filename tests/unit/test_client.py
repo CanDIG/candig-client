@@ -9,10 +9,10 @@ import unittest
 
 import mock
 
-import ga4gh.client.client as client
-import ga4gh.client.exceptions as exceptions
+import candig.client.client as client
+import candig.client.exceptions as exceptions
 
-import ga4gh.schemas.protocol as protocol
+import candig.schemas.protocol as protocol
 
 
 class TestSearchMethodsCallRunRequest(unittest.TestCase):
@@ -75,11 +75,13 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
         request.reference_name = self.referenceName
         request.start = self.start
         request.end = self.end
-        request.variant_set_id = self.variantSetId
+        variant_set_ids = []
+        variant_set_ids.append(self.variantSetId)
+        request.variant_set_ids.extend(variant_set_ids)
         request.call_set_ids.extend(self.callSetIds)
         request.page_size = self.pageSize
         self.httpClient.search_variants(
-            self.variantSetId, start=self.start, end=self.end,
+            variant_set_ids, start=self.start, end=self.end,
             reference_name=self.referenceName, call_set_ids=self.callSetIds)
         self.httpClient._run_search_request.assert_called_once_with(
             request, "variants", protocol.SearchVariantsResponse)

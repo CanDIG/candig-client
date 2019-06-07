@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# ga4gh-client documentation build configuration file, created by
+# candig-client documentation build configuration file, created by
 # sphinx-quickstart on Tue Oct 11 07:21:12 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -21,11 +21,11 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 # the following two lines are similar ones to those in dev_glue.py
-# they enable python to find the ga4gh.client package
-import ga4gh
-ga4gh.__path__.insert(0, '../ga4gh')
+# they enable python to find the candig.client package
+import candig
+candig.__path__.insert(0, '../candig')
 
-import ga4gh.client
+import candig.client
 
 # -- General configuration ------------------------------------------------
 
@@ -60,7 +60,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ga4gh-client'
+project = u'candig-client'
 copyright = u'2016, GA4GH'
 author = u'GA4GH'
 
@@ -145,7 +145,7 @@ html_theme = 'sphinx_rtd_theme'
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = u'ga4gh-client v0.0.1'
+# html_title = u'candig-client v0.0.1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -245,7 +245,7 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ga4gh-clientdoc'
+htmlhelp_basename = 'candig-clientdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -271,7 +271,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ga4gh-client.tex', u'ga4gh-client Documentation',
+    (master_doc, 'candig-client.tex', u'candig-client Documentation',
      u'GA4GH', 'manual'),
 ]
 
@@ -313,7 +313,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ga4gh-client', u'ga4gh-client Documentation',
+    (master_doc, 'candig-client', u'candig-client Documentation',
      [author], 1)
 ]
 
@@ -328,8 +328,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ga4gh-client', u'ga4gh-client Documentation',
-     author, 'ga4gh-client', 'One line description of project.',
+    (master_doc, 'candig-client', u'candig-client Documentation',
+     author, 'candig-client', 'One line description of project.',
      'Miscellaneous'),
 ]
 
