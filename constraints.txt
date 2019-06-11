@@ -21,5 +21,5 @@
 # When making a release, these constraints are changed to point at
 # the released dependency.
 #
-git+git://github.com/ga4gh/candig-common.git@master#egg=candig_common
+git+git://github.com/CanDIG/candig-common.git@master#egg=candig_common
 git+git://github.com/CanDIG/candig-schemas.git@v0.8.0#egg=candig_schemas
