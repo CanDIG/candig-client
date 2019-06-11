@@ -22,4 +22,4 @@
 # the released dependency.
 #
 git+git://github.com/CanDIG/candig-common.git@master#egg=candig_common
-git+git://github.com/CanDIG/candig-schemas.git@v0.8.0#egg=candig_schemas
+git+git://github.com/CanDIG/candig-schemas.git@2to3#egg=candig_schemas
