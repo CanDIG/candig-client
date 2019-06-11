@@ -34,7 +34,7 @@ def addDisableUrllibWarningsArgument(parser):
 def addVersionArgument(parser):
     # TODO argparse strips newlines from version output
     versionString = (
-        "GA4GH Client Version {}\n"
+        "CanDIG Client Version {}\n"
         "(Protocol Version {})".format(
             candig.client.__version__, protocol.version))
     parser.add_argument(
