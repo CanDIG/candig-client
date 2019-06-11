@@ -13,7 +13,7 @@ install:
   - pip install pip --upgrade
   - pip install setuptools
   - python setup.py sdist
-  - pip install dist/candig_client*.tar.gz
+  - pip install dist/candig_client*.tar.gz -c constraints.txt
   - pip install -r requirements.txt -c constraints.txt --upgrade --no-cache-dir
 # every installable in setup.py's entry_points should be tested here
   - ga4gh_client --version
