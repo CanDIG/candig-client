@@ -1,9 +1,6 @@
 """
 Client classes for the GA4GH reference implementation.
 """
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import requests
 import posixpath

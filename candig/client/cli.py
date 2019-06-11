@@ -1,9 +1,6 @@
 """
 Client cli
 """
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
 
 import json
 import logging
@@ -13,7 +10,7 @@ import candig.client
 import candig.client.client as client
 import candig.client.exceptions as exceptions
 
-import ga4gh.common.cli as cli
+import candig.common.cli as cli
 import candig.schemas.protocol as protocol
 
 
@@ -555,7 +552,7 @@ class VariantFormatterMixin(object):
                 variant.reference_bases,
                 "".join(list(variant.alternate_bases)),
                 sep="\t", end="\t")
-            for key, value in variant.attributes.attr.items():
+            for key, value in list(variant.attributes.attr.items()):
                 val = value.values[0].string_value
                 print(key, val, sep="=", end=";")
             print("\t", end="")
@@ -590,7 +587,7 @@ class GenotypesFormatterMixin(object):
                 variant.reference_bases,
                 "".join(list(variant.alternate_bases)),
                 sep="\t", end="\t")
-            for key, value in variant.attributes.attr.items():
+            for key, value in list(variant.attributes.attr.items()):
                 val = value.values[0].string_value
                 print(key, val, sep="=", end=";")
             print()
@@ -632,7 +629,7 @@ class FeatureFormatterMixin(object):
             print(
                 "FeatureType:", feature.feature_type.id,
                 feature.feature_type.term, end="\t")
-            for attrkey in feature.attributes.vals.keys():
+            for attrkey in list(feature.attributes.vals.keys()):
                 print(
                     attrkey, feature.attributes.vals[attrkey],
                     sep=":", end="; ")
@@ -1023,7 +1020,7 @@ class ListReferenceBasesRunner(AbstractQueryRunner):
             print(">{}:{}-{}".format(self._referenceId, start, end))
 
             textWidth = 70
-            for index in xrange(0, len(sequence), textWidth):
+            for index in range(0, len(sequence), textWidth):
                 print(sequence[index: index+textWidth])
 
 
