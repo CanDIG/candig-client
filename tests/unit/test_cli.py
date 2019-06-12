@@ -420,7 +420,7 @@ class TestOutputFormats(unittest.TestCase):
             self.key = 'key'
             self.auth0_token = 'auth0_token'
             self.baseUrl = 'baseUrl'
-            self.verbose = 'verbose'
+            self.verbose = 0
 
     def makeFakeObject(self):
         returnObj = fakeobj.FakeObject()
