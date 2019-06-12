@@ -430,7 +430,7 @@ class TestOutputFormats(unittest.TestCase):
 
     def _getRunPrintMethodCalls(self, runner):
         printCalls = []
-        with mock.patch('__builtin__.print') as printMethod:
+        with mock.patch('builtins.print') as printMethod:
             printMethod.side_effect = \
                 lambda *args, **kwargs: printCalls.append((args, kwargs))
             runner.run()

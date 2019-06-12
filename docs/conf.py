@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # the following two lines are similar ones to those in dev_glue.py
 # they enable python to find the candig.client package
 import candig
-candig.__path__.append(0, '../candig')
+candig.__path__.append('../candig')
 
 import candig.client
 
