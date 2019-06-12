@@ -47,9 +47,9 @@ def verbosityToLogLevel(verbosity):
     Returns the specfied verbosity level interpreted as a logging level.
     """
     ret = 0
-    if verbosity == 1:
+    if int(verbosity) == 1:
         ret = logging.INFO
-    elif verbosity >= 2:
+    elif int(verbosity) >= 2:
         ret = logging.DEBUG
     return ret
 

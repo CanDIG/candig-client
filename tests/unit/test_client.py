@@ -132,7 +132,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
                 start=self.start,
                 end=self.end,
                 effects=[{b"term": b"just a term"}, {b"term_id": b"an id"}],
-                reference_id=self.referenceId)
+                reference_id=str(self.referenceId))
 
     def testSearchFeatures(self):
         request = protocol.SearchFeaturesRequest()

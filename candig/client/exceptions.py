@@ -3,6 +3,7 @@ Exceptions for the GA4GH server. Each exception that can occur in the server
 is given a unique error code that is derived from its name.
 """
 
+
 class BaseClientException(Exception):
     """
     The base class for client exceptions
