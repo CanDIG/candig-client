@@ -9,12 +9,12 @@ import json
 import logging
 import requests
 
-import ga4gh.client
-import ga4gh.client.client as client
-import ga4gh.client.exceptions as exceptions
+import candig.client
+import candig.client.client as client
+import candig.client.exceptions as exceptions
 
 import ga4gh.common.cli as cli
-import ga4gh.schemas.protocol as protocol
+import candig.schemas.protocol as protocol
 
 
 ###############
@@ -34,9 +34,9 @@ def addDisableUrllibWarningsArgument(parser):
 def addVersionArgument(parser):
     # TODO argparse strips newlines from version output
     versionString = (
-        "GA4GH Client Version {}\n"
+        "CanDIG Client Version {}\n"
         "(Protocol Version {})".format(
-            ga4gh.client.__version__, protocol.version))
+            candig.client.__version__, protocol.version))
     parser.add_argument(
         "--version", version=versionString, action="version")
 

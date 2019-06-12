@@ -27,9 +27,9 @@ before_install:
 # run_tests.py runs everything under the script: tag so only put commands
 # under it that we want to run (and want to be able to run) as local tests
 script: 
-  - flake8 client_dev.py setup.py tests ga4gh scripts
+  - flake8 client_dev.py setup.py tests candig scripts
   - python -mnose tests
-              --with-coverage --cover-package ga4gh.client
+              --with-coverage --cover-package candig.client
               --cover-inclusive --cover-min-percentage=50
               --cover-branches --cover-erase
   - make clean -C docs
